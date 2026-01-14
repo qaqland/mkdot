@@ -16,6 +16,30 @@ install dotfiles from TOPIC(s) to BASE
   -t BASE specify BASE directory for all TOPICs
 ```
 
+## Example
+
+prepare a topic
+
+```
+my-topic/
+├── dot-vimrc
+└── some-profile
+```
+
+install this topic with mkdot
+
+```
+$ mkdot -t /tmp/test my-topic
+```
+
+result
+
+```
+/tmp/test/
+├── .vimrc
+└── some-profile
+```
+
 ## License
 
 Copyright (c) 2026 qaqland.
