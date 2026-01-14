@@ -45,7 +45,7 @@ static void print_help(void) {
 	       "\n"
 	       "install dotfiles from TOPIC(s) to BASE\n"
 	       "\n"
-	       "  -f      overwrite existing files without prompting\n"
+	       "  -f      overwrite existing files (default)\n"
 	       "  -i      prompt before overwriting (interactive)\n"
 	       "  -n      no overwrite, skip existing files\n"
 	       "  -s      create symbolic links instead of copying\n"
@@ -143,14 +143,14 @@ static const char *target_dst(const char *src) {
 	}
 
 	while (*src) {
-		if (strncmp(src, "/dot-", 5) == 0) {
+		if (strncmp(src - 1, "/dot-", 5) == 0) {
 			if (*(src + 5) != '\0') {
-				*ptr++ = '/';
 				*ptr++ = '.';
 			} else {
-				strncpy(ptr, "/dot-", 5);
+				strncpy(ptr, "dot-", 4);
+				ptr += 4;
 			}
-			src += 5;
+			src += 4;
 		} else {
 			*ptr++ = *src++;
 		}

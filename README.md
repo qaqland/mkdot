@@ -9,10 +9,16 @@ usage: mkdot [-fins] TOPIC... BASE
 
 install dotfiles from TOPIC(s) to BASE
 
-  -f      overwrite existing files without prompting
+  -f      overwrite existing files (default)
   -i      prompt before overwriting (interactive)
   -n      no overwrite, skip existing files
   -s      create symbolic links instead of copying
   -t BASE specify BASE directory for all TOPICs
 ```
+
+## License
+
+Copyright (c) 2026 qaqland.
+
+BSD 2-Clause "Simplified" License
 
